@@ -20,6 +20,7 @@ fraction simplify(fraction *f)
 
 int gcd(int u, int v)
 {
+    int count = 0;
     int t;
     while  (u > 0)
     {
@@ -29,32 +30,39 @@ int gcd(int u, int v)
             u = v;
             v = t;
         }
+        //exercise 1.6
+        printf("u = %d, v = %d\n", u, v);
+        count++;
+        printf("%d\n", count);
         u = u-v;
     }
 
-    //exercise 1.2 code 
+    /* exercise 1.2 code 
     if (v < 0)
     {
         return u % v;
     }
+    */
+    printf("Final count is: %d\n", count);
     return v;
 }
 
 int main()
 {
-    fraction f;
+    /* fraction f;
 
     while (scanf("%d/%d", &f.numerator, &f.denominator) != EOF)
     {
         simplify(&f);
         printf("Your fraction reduced is: %d/%d\n", f.numerator, f.denominator);
     }
+    */
+    int x, y;
 
-    /* while (scanf("%d %d", &x, &y) != EOF)
+    while (scanf("%d %d", &x, &y) != EOF)
     {   
         //exercise 1.2 code
-        // if (x>0 && y>0)
-        printf("X=%d Y=%d GCD=%d\n", x, y, gcd(x,y))
+        if (x>0 && y>0)
+            printf("X=%d Y=%d GCD=%d\n", x, y, gcd(x,y));
     }
-    */
 }

@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-//exercise 1.3 code
+// exercise 1.3 code
 typedef struct
 {
     int numerator;
     int denominator;
 } fraction;
 
-//prototype, too lazy to move simplify
+// prototype, too lazy to move simplify
 int gcd(int u, int v);
 
 fraction simplify(fraction *f)
@@ -18,11 +18,20 @@ fraction simplify(fraction *f)
     f->denominator /= common;
 }
 
+void binary(int x)
+{
+    int value = 0;
+    if (x == 0)
+        return;
+    binary(x / 2);
+    printf("%d", x % 2);
+}
+
 int gcd(int u, int v)
 {
     int count = 0;
     int t;
-    while  (u > 0)
+    while (u > 0)
     {
         if (u < v)
         {
@@ -30,14 +39,14 @@ int gcd(int u, int v)
             u = v;
             v = t;
         }
-        //exercise 1.6
+        // exercise 1.6
         printf("u = %d, v = %d\n", u, v);
         count++;
         printf("%d\n", count);
-        u = u-v;
+        u = u - v;
     }
 
-    /* exercise 1.2 code 
+    /* exercise 1.2 code
     if (v < 0)
     {
         return u % v;
@@ -57,12 +66,13 @@ int main()
         printf("Your fraction reduced is: %d/%d\n", f.numerator, f.denominator);
     }
     */
+
     int x, y;
 
     while (scanf("%d %d", &x, &y) != EOF)
-    {   
-        //exercise 1.2 code
-        if (x>0 && y>0)
-            printf("X=%d Y=%d GCD=%d\n", x, y, gcd(x,y));
+    {
+        // exercise 1.2 code
+        if (x > 0 && y > 0)
+            printf("X=%d Y=%d GCD=%d\n", x, y, gcd(x, y));
     }
 }

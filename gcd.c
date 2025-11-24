@@ -27,6 +27,14 @@ void binary(int x)
     printf("%d", x % 2);
 }
 
+// exercise 1.8
+int gcd3(int u, int v, int w)
+{
+    int t = gcd(u, v);
+    w = gcd(t, w); 
+    return w;
+}
+
 int gcd(int u, int v)
 {
     int count = 0;
@@ -67,12 +75,12 @@ int main()
     }
     */
 
-    int x, y;
+    int x, y, z;
 
-    while (scanf("%d %d", &x, &y) != EOF)
+    while (scanf("%d %d %d", &x, &y, &z) != EOF)
     {
         // exercise 1.2 code
-        if (x > 0 && y > 0)
-            printf("X=%d Y=%d GCD=%d\n", x, y, gcd(x, y));
+        if (x > 0 && y > 0 && z > 0)
+            printf("X=%d Y=%d Z=%d GCD=%d\n", x, y, z, gcd3(x, y, z));
     }
 }

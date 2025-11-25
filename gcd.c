@@ -77,6 +77,7 @@ int main()
     */
 
     // exercise 1.9
+    // testing email
     int a = INT_MAX;
     int b = INT_MAX - 1;
     int g = gcd(a, b);

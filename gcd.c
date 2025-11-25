@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 // exercise 1.3 code
 typedef struct
@@ -37,7 +38,7 @@ int gcd3(int u, int v, int w)
 
 int gcd(int u, int v)
 {
-    int count = 0;
+    //int count = 0;
     int t;
     while (u > 0)
     {
@@ -48,9 +49,9 @@ int gcd(int u, int v)
             v = t;
         }
         // exercise 1.6
-        printf("u = %d, v = %d\n", u, v);
-        count++;
-        printf("%d\n", count);
+        //printf("u = %d, v = %d\n", u, v);
+        //count++;
+        //printf("%d\n", count);
         u = u - v;
     }
 
@@ -60,7 +61,7 @@ int gcd(int u, int v)
         return u % v;
     }
     */
-    printf("Final count is: %d\n", count);
+    //printf("Final count is: %d\n", count);
     return v;
 }
 
@@ -75,12 +76,19 @@ int main()
     }
     */
 
-    int x, y, z;
+    // exercise 1.9
+    int a = INT_MAX;
+    int b = INT_MAX - 1;
+    int g = gcd(a, b);
+    
+    printf("MAXIMUM PAIR WHERE GCD IS %d IS %d/%d", g, a, b);
 
-    while (scanf("%d %d %d", &x, &y, &z) != EOF)
-    {
+    //int x, y, z;
+
+    //while (scanf("%d %d %d", &x, &y, &z) != EOF)
+    //{
         // exercise 1.2 code
-        if (x > 0 && y > 0 && z > 0)
-            printf("X=%d Y=%d Z=%d GCD=%d\n", x, y, z, gcd3(x, y, z));
-    }
+        //if (x > 0 && y > 0 && z > 0)
+            //printf("X=%d Y=%d Z=%d GCD=%d\n", x, y, z, gcd3(x, y, z));
+    //}
 }

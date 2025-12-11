@@ -113,7 +113,7 @@ int main()
     append('I');
     append('S');
     append('T');
-    exchange(head, head->next);
+    //exchange(head, head->next);
     print_list(head);
     return 0;
 }
